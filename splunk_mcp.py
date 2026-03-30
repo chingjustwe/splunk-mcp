@@ -322,9 +322,7 @@ def get_splunk_connection() -> splunklib.client.Service:
                 username=username,
                 password=SPLUNK_PASSWORD,
                 scheme=SPLUNK_SCHEME,
-                verify=VERIFY_SSL,
-                app=os.environ.get("SPLUNK_APP", "-"),
-                autologin=True
+                verify=VERIFY_SSL
             )
         logger.debug(f"✅ Connected to Splunk successfully")
         return service
